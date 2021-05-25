@@ -19,9 +19,25 @@
             numbers[3] = x;
             show(numbers);
             //prac2-2 10個の順数を生成し，n番目とm番目を入れ替える
+            var numbers = [];
+            createSequentialNumbers(numbers, 10);
+            show(numbers);
+            var y = Math.floor(Math.random() * numbers.length);
+            var z = Math.floor(Math.random() * numbers.length);
+            var x = numbers[y];
+            numbers[y] = numbers[z];
+            numbers[z] = x;
+            show(numbers);
             //(nとmは乱数にて決定する)
             //prac2-3 prac2-2を20回繰り返す（シャッフルプログラムの完成）
-
+            for (var i = 0; i < 20; i++) {
+                var y = Math.floor(Math.random() * numbers.length);
+                var z = Math.floor(Math.random() * numbers.length);
+                var x = numbers[y];
+                numbers[y] = numbers[z];
+                numbers[z] = x;
+            }
+            show(numbers);
             //prac2-4 10個の乱数を生成し，もう一つの配列を作成し，コピーするプログラム．
         }
     </script>

@@ -16,3 +16,9 @@ function createSequentialNumbers(array, n) {
         array.push(i + 1);
     }
 }
+
+function createRandomNumbers(array, n) {
+    for (var i = 0; i < n; i++) {
+        array.push(Math.floor(Math.random() * n));
+    }
+}
