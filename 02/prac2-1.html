@@ -39,6 +39,14 @@
             }
             show(numbers);
             //prac2-4 10個の乱数を生成し，もう一つの配列を作成し，コピーするプログラム．
+            var numbers = [];
+            createRandomNumbers(numbers, 10);
+            show(numbers);
+            var numbers1 = [];
+            for (var i = 0; i < numbers.length; i++) {
+                numbers1[i] = numbers[i]
+            }
+            show(numbers1);
         }
     </script>
 
