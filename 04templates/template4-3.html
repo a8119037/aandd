@@ -13,6 +13,18 @@
             var numbers = [];
             createOrderedRandomNumbers(numbers, 20);
             show(numbers);
+            var kazu = Math.floor(Math.random() * 50);
+            show(kazu + 'について調べる')
+            for (var i = 0; i < 20; i++) {
+                if (kazu == numbers[i]) {
+                    show(i + '番地です');
+                    break;
+                }
+                else if (i == 19) {
+                    show("なし")
+                }
+            }
+
         }
 
         //この関数を，aaandd.jsに加えてください．
@@ -53,7 +65,7 @@
 </head>
 
 <body>
-    <h1>ex3-1</h1>
+    <h1>prac4-3</h1>
     <button onclick="runButtonPressed()">run!</button>
     <p id="res"></p>
 </body>
