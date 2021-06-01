@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            //prac2-1 10個の順数（１，２，３．．．の数列）を生成し，２番目と４番目を入れ替える
+            var numbers = [];
+            createRandomNumbers(numbers, 5);
+            show(numbers);
+            var numbers1 = [];
+            for (var i = 0; i < numbers.length; i++) {
+                numbers1.push(numbers[i] + 2);
+            }
+            show(numbers1);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>prac4-1</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
