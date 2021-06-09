@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers = [];
+            createRandomNumbers(numbers, 10);
+            show(numbers);
+            for (var i = 0; i < numbers.length; i++) {
+                var banchi = 0;
+                var banchi1 = 1;
+                for (var j = 0; j < numbers.length; j++) {
+                    if (numbers[banchi] > numbers[banchi1]) {
+                        var tmp = numbers[banchi];
+                        numbers[banchi] = numbers[banchi1];
+                        numbers[banchi1] = tmp;
+                    }
+                    banchi = banchi + 1;
+                    banchi1 = banchi1 + 1;
+                    //show(numbers);
+                }
+            }
+            show(numbers);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>prac5-1</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
