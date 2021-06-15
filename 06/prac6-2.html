@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script type="text/javascript" src="nouns.js"></script>
+    <script type="text/javascript" src="verbs.js"></script>
+
+    <script>
+
+        var nouns;
+
+        $(document).ready(function () {
+            nouns = nounstext.split('\n');
+        });
+        function judge() {
+            var length = nouns.length;
+            for (var i = 0; i < length; i++) {
+                var text = nouns[i]
+                var chars = text.split('');
+                var length1 = chars.length;
+                var chars1 = [];
+                for (var j = 0; j < length1; j++) {
+                    chars1[j] = chars.pop();
+                }
+                var text3 = chars1.join('');
+                if (text == text3) {
+                    show(text);
+                }
+                //show(chars1);
+
+            }
+        }
+
+        function runButtonPressed() {
+            var noun = selectone(nouns);
+            //show(noun);
+            judge();
+        }
+
+        function selectone(array) {
+            var size = array.length;
+            var index = Math.floor(Math.random() * size);
+            return array[index];
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>prac6-2</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+
+</body>
+
+</html>
