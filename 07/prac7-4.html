@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        var bots = {};
+
+        //$().ready(function () {
+        //fruits['apple'] = 'りんご';
+        //fruits['orange'] = 'みかん';
+        //});
+
+        function registerButtonPressed() {
+            var word = document.getElementById('tf1').value;
+            var bot = bots[word];
+            if (bot == null) {
+                document.getElementById('tf2').value = word + 'の答え方を教えて！';
+            }
+            else {
+                document.getElementById('tf2').value = bot;
+            }
+            console.log(bots);
+        }
+
+        function runButtonPressed() {
+            var word = document.getElementById('tf1').value;
+            var answer = document.getElementById('tf3').value;
+            bots[word] = answer;
+            console.log(bots);
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>botシステム</h1>
+    あなた：<input id="tf1" type="text" value="">
+    <button onclick="registerButtonPressed()">発言　</button>
+    <br>
+    コンピュータ：<input id="tf2" type="text" value="">
+    <br>
+    応答：<input id="tf3" type="text" value="">
+    <button onclick="runButtonPressed()">教えて</button>
+    <p id="res"></p>
+</body>
+
+</html>
