@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../osql.js"></script>
+
+    <script>
+        osql.requireLogin();
+
+        async function runButtonPressed() {
+            var objects = await osql.connect('select * from Students;');
+            var students = {};
+            var total = 0;
+            var count = 0;
+            for (var i = 0; i < objects.length; i++) {
+                var obj = objects[i];
+                var gender = obj['gender'];
+                if (gender == 'm') {
+                    total += Number(obj['height']);
+                    count += 1;
+                }
+            }
+            var height = total / count;
+            document.getElementById('res').innerHTML = height;
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>ex8-4</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <pre id="res"></pre>
+</body>
+
+</html>
