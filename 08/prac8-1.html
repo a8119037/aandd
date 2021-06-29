@@ -11,13 +11,18 @@
 
     <script>
         function runButtonPressed() {
-            var points = [];
+            var studentsC = [];
             var students = { '黒木': '6月24日', '粕川': '5月12日', '西村': '6月24日', '上島': '6月5日' };
-            points[0] = { name: '黒木', birthday: students['黒木'] };
-            points[1] = { name: '粕川', birthday: students['粕川'] };
-            points[2] = { name: '西村', birthday: students['西村'] };
-            points[3] = { name: '上島', birthday: students['上島'] };
-            document.getElementById('res').innerHTML = JSON.stringify(points, null, '\t');
+            var keys = Object.keys(students);
+            for (var i = 0; i < keys.length; i++) {
+                var key = keys[i];
+                studentsB = {};
+                console.log(key);
+                studentsB.name = key;
+                studentsB.birthday = students[key];
+                studentsC.push(studentsB);
+            }
+            document.getElementById('res').innerHTML = JSON.stringify(studentsC, null, '\t');
         }
 
     </script>
